@@ -21,7 +21,7 @@ $space-l: 40px
 $m: 3px          //shadow ammount
 $mb: $m * 3      //shadow blur ammount
 $card-image-height: 250px
-$imageaspectratio: 16 / 9
+$imageaspectratio: 1.75
 $card-min-width: 200px
 $paragraphfsize: 14px
 
@@ -56,7 +56,7 @@ body
   color: $accent
 .c-gray, label, table tr th
   color: $gray
-.c-bg, input[type=radio]:checked + label
+.c-bg, input[type=radio]:checked + label, .btn.fab, .btn
   color: $bg
 .c-danger, .badge.danger, .btn.danger.outline
   color: $danger
@@ -93,9 +93,8 @@ h1, h2, h3, h4, h5, h6, p, a
   padding: $space-s
   min-width: $card-min-width
   .cardimg
-    border-top-left-radius: $b-radius
-    border-top-right-radius: $b-radius
-    margin: (-$space-s) (-$space-s) 0 (-$space-s)
+    border-radius: $b-radius
+    margin: (-$space-s) (-$space-s) (-$space-s - 3px) (-$space-s)
     object-fit: cover
     height: $card-image-height
     width: $card-image-height * $imageaspectratio
@@ -132,7 +131,6 @@ label
     line-height: $space-l
     text-align: center
     font-size: $space-l
-    font-weight: bold
     width: $space-l
     height: $space-l
     border-radius: 999999px
