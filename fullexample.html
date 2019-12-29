@@ -276,3 +276,11 @@
     <p>Text</p>
   </div>
 </div>
+<script>
+  document.getElementById('modal').onclick = function(){this.classList.remove("visible")};
+var divs = document.querySelectorAll('.notification');
+[].forEach.call(divs, function(div) {
+  div.onclick = function(){this.classList.add("removed")};
+});
+</script>
+
