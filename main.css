@@ -126,10 +126,14 @@ h1, h2, h3, h4, h5, h6, p, a {
 }
 .card .cardimg {
   border-radius: 20px;
-  margin: -10px -10px -13px -10px;
+  margin: -10px;
+  margin-bottom: -13px;
   object-fit: cover;
   height: 250px;
   width: 437.5px;
+}
+.card .cardimg:not(:last-child) {
+  margin-bottom: 3px;
 }
 
 a, .btn, input, .badge {
