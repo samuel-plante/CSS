@@ -1,0 +1,294 @@
+//COLORS============================================
+$accent: #35A7FF
+$gray: #999
+$danger: #FF213E
+//light theme
+$bg: #eee                  //background
+$t: #222                   //text
+$sl: rgba(255,255,255,0.9) //shadow light
+$sd: rgba(0,0,0,0.08)      //shadow dark
+//dark theme
+  $bg: #222
+  $t: #eee
+  $sl: rgba(255,255,255,0.07)
+  $sd: rgba(0,0,0,0.3)
+//SIZES==============================================
+$b-radius: 20px  //corner radius
+$space-xs: 5px
+$space-s: 10px
+$space-m: 20px
+$space-l: 40px
+$m: 3px          //shadow ammount
+$mb: $m * 3      //shadow blur ammount
+$card-image-height: 250px
+$imageaspectratio: 16 / 9
+$card-min-width: 200px
+$paragraphfsize: 14px
+
+//notouch
+$sizes: $space-xs "xs", $space-s "s", $space-m "m", $space-l "l", 0 "0"
+$mn: -$m
+$boxshadowin: inset $m $m $mb $sd, inset $mn $mn $mb $sl
+$boxshadowout: $m $m $mb $sd, $mn $mn $mb $sl
+$boxshadowouthover: $m $m $mb $m $sd, $mn $mn $mb $sl
+
+@import url('https://fonts.googleapis.com/css?family=Raleway|Roboto:400,700&display=swap')
+*
+  font-family: Roboto, sans-serif
+  color: $t
+  font-size: $paragraphfsize
+  cursor: unset
+@for $i from 1 through 6
+  h#{$i}
+    font-size: $paragraphfsize * 4 / $i
+.title
+  font-family: Raleway, sans-serif
+a, button, .btn
+  text-decoration: none
+  outline: none
+  cursor: pointer
+  border: none
+button, .btn
+  text-transform: uppercase
+body
+  margin: 0
+.c-accent, .btn.outline, .badge, input[type=radio] + label
+  color: $accent
+.c-gray, label, table tr th
+  color: $gray
+.c-bg, input[type=radio]:checked + label
+  color: $bg
+.c-danger, .badge.danger, .btn.danger.outline
+  color: $danger
+.b-accent, .btn, input[type=radio] + label:after, input[type=radio]:checked + label, input[type=checkbox]:checked + label
+  background-color: $accent
+.b-gray, input[type=checkbox] + label
+  background-color: $gray
+.b-bg, body, input[type=radio]:checked + label:after, input[type=radio] + label, input[type=checkbox] + label:after
+  background-color: $bg
+.b-danger, .btn.danger
+  background-color: $danger
+.shadowout
+  box-shadow: $boxshadowout
+.shadowin
+  box-shadow: $boxshadowin
+.shadowboth
+  box-shadow: $boxshadowout, $boxshadowin
+a.shadowout:hover, button.shadowout:hover
+  box-shadow: $boxshadowouthover
+.flex, .containrow, .containcolumn, .navbar, #modal.visible, .notificationbar
+  display: flex
+.notificationbar .notification.removed, input[type=radio], input[type=checkbox], #modal
+  display: none
+.containrow, .containcolumn
+  justify-content: space-evenly
+  align-items: flex-start
+.containcolumn, .notificationbar
+  flex-direction: column
+h1, h2, h3, h4, h5, h6, p, a
+  margin: $space-xs
+.card
+  background-color: lighten($bg, 1.5%)
+  margin: $space-s
+  padding: $space-s
+  min-width: $card-min-width
+  .cardimg
+    border-top-left-radius: $b-radius
+    border-top-right-radius: $b-radius
+    margin: (-$space-s) (-$space-s) 0 (-$space-s)
+    object-fit: cover
+    height: $card-image-height
+    width: $card-image-height * $imageaspectratio
+a, .btn, input, .badge
+  transition: all .2s ease-in-out
+label
+  transition: all .1s ease-in-out
+.corners, .btn, .badge, form input, form select, form textarea, input[type=radio] + label, .card, .notification
+  border-radius: $b-radius
+.btn
+  padding: $space-s $space-m
+  display: inline-block
+  &.outline
+    padding: ($space-s - 2px) ($space-m - 2px)
+    background-color: transparent
+    border: 2px solid $accent
+    &.danger
+      border: 2px solid $danger
+      &:hover
+        border: 2px solid darken($danger, 5%)
+        color: darken($danger, 5%)
+    &:hover
+      border: 2px solid darken($accent, 5%)
+      color: darken($accent, 5%)
+  &:not(.outline).danger:hover
+    background-color: darken($danger, 5%)
+  &:not(.outline):hover
+    background-color: darken($accent, 5%)
+  &.fab
+    position: fixed
+    bottom: $space-m
+    right: $space-m
+    padding: $space-s
+    line-height: $space-l
+    text-align: center
+    font-size: $space-l
+    font-weight: bold
+    width: $space-l
+    height: $space-l
+    border-radius: 999999px
+    z-index: 1
+.badge
+  padding: $space-xs $space-s
+  background-color: rgba($accent, .15)
+  &.danger
+    background-color: rgba($danger, .15)
+a.badge:hover, a:hover .badge
+  color: darken($accent, 15%)
+  background-color: darken(rgba($accent, .15), 15%)
+a.badge.danger:hover, a:hover .badge.danger
+  color: darken($danger, 15%)
+  background-color: darken(rgba($danger, .15), 15%)
+input, select, textarea, .group, .groupselect, .groupmultiselect
+    width: 100%
+    max-width: 500px
+    -webkit-appearance: none
+    appearance: none
+    outline: none
+form
+  input, select, textarea
+    &:focus
+      box-shadow: 0 0 0 3px rgba($accent, .25)
+    box-sizing: border-box
+    background-color: transparent
+    padding: 13px $space-m $space-s $space-m
+    display: block
+    border: 1px solid $gray
+    &:focus
+      border: 1px solid $accent
+    &:not([type=checkbox]):not([type=radio]) + label
+      left: $space-m + 1px
+      top: 14px
+    &:not([type=checkbox]):not([type=radio]):not(:placeholder-shown) + label
+      top: 4px
+      left: $space-m
+      font-size: 10px
+    &[type=checkbox] + label
+      text-indent: $space-l + $space-s !important
+  .group, .groupmultiselect, .groupselect
+    position: relative
+    margin-bottom: $space-m
+    margin-top: $space-s
+  label
+    font-weight: normal
+    position: absolute
+  select[multiple]
+    padding: 0
+    option
+      padding: 2px $space-m
+  .groupselect
+    &:after
+      content: ''
+      border-top: 8px solid $t
+      border-left: 4px solid transparent
+      border-right: 4px solid transparent
+      position: absolute
+      top: 20px
+      right: $space-m
+input[type=checkbox]
+  &:checked + label:after
+    left: calc(100%)
+    transform: translateX(-100%)
+  + label
+    color: $t
+    text-indent: -9999px
+    width: $space-l
+    height: $space-m
+    border-radius: 9999px
+    &:after
+      top: 0px
+      left: 0px
+      width: $space-m
+      height: $space-m
+    &:active:after
+      width: $space-m + 2px
+input[type=radio]
+  &:checked + label:after
+    box-shadow: 0 0 0 2px $accent, 0 0 0 4px $bg
+  + label
+    margin: $space-s 0 $space-m
+    padding-right: 12px
+    text-indent: 28px
+    height: 32px
+    line-height: 32px
+    display: inline-block
+    &:after
+      top: 11px
+      left: 11px
+      width: 10px
+      height: 10px
+      box-shadow: 0 0 0 2px $bg, 0 0 0 4px $accent
+input[type=radio] + label, input[type=checkbox] + label
+    display: block
+    font-weight: normal!important
+    cursor: pointer
+    margin: $space-s 0 $space-m
+    position: relative
+    &:after
+      content: ''
+      position: absolute
+      transition: 0.2s ease-in-out
+      border-radius: 99999px
+*[disabled], *[disabled] + label
+  opacity: 50%
+table
+  border-spacing: 0
+  margin: $space-s
+  &.striped tr:nth-child(even)
+    background-color: rgba(0,0,0,0.025)
+  tr:nth-child(2) td
+    border-top: 1px solid $gray
+  th
+    font-weight: normal
+    text-align: left
+    padding: $space-m
+  td
+    padding: $space-m
+    border-top: 1px solid rgba($gray, .5)
+.navbar
+  align-items: center
+  .brand
+    font-weight: bold
+  a
+    padding: $space-m $space-s
+    &:hover
+      color: darken($t, 5%)
+@each $size, $sizename in $sizes
+  .m-#{$sizename} 
+    margin: $size !important
+  .p-#{$sizename}
+    padding: $size !important
+.ml-auto, .mx-auto
+  margin-left: auto !important
+.mx-auto, .mr-auto
+  margin-right: auto !important
+#modal
+  width: 100vw
+  height: 100vh
+  background-color: rgba(0,0,0,0.7)
+  position: fixed
+  top: 0
+  left: 0
+  z-index: 1
+  .body
+    margin: auto
+    min-width: $card-min-width
+.notificationbar
+  position: fixed
+  top: $space-m
+  right: -$b-radius * 2
+  align-items: flex-end
+  .notification
+    max-width: 250px
+    min-width: 0
+    margin: $space-xs
+    padding: $space-s $space-l $space-s $space-s
