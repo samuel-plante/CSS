@@ -94,7 +94,10 @@ h1, h2, h3, h4, h5, h6, p, a
   min-width: $card-min-width
   .cardimg
     border-radius: $b-radius
-    margin: (-$space-s) (-$space-s) (-$space-s - 3px) (-$space-s)
+    margin: -$space-s
+    margin-bottom: -$space-s - 3px
+    &:not(:last-child)
+      margin-bottom: 3px
     object-fit: cover
     height: $card-image-height
     width: $card-image-height * $imageaspectratio
