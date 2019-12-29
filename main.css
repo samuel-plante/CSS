@@ -57,7 +57,7 @@ body {
   color: #999;
 }
 
-.c-bg, input[type=radio]:checked + label {
+.c-bg, input[type=radio]:checked + label, .btn.fab, .btn {
   color: #eee;
 }
 
@@ -125,12 +125,11 @@ h1, h2, h3, h4, h5, h6, p, a {
   min-width: 200px;
 }
 .card .cardimg {
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-  margin: -10px -10px 0 -10px;
+  border-radius: 20px;
+  margin: -10px -10px -13px -10px;
   object-fit: cover;
   height: 250px;
-  width: 444.4444444444px;
+  width: 437.5px;
 }
 
 a, .btn, input, .badge {
@@ -179,7 +178,6 @@ label {
   line-height: 40px;
   text-align: center;
   font-size: 40px;
-  font-weight: bold;
   width: 40px;
   height: 40px;
   border-radius: 999999px;
