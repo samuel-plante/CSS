@@ -1,0 +1,276 @@
+head
+  meta(charset='UTF-8')
+  link(rel='stylesheet' type='text/css' href='css/maindark.css')
+  meta(name='viewport' content='initial-scale=1, viewport-fit=cover')
+.navbar.shadowout
+  a.brand.title Companyname
+  a Contact
+  a Shop
+  a Cart
+  a.btn.outline Sign In
+  a.ml-auto(href="fullexample.html")
+    span.badge Light mode
+a.btn.fab.shadowout &#x1F4A9;
+.containcolumn.m-m
+  h1.title.mx-auto.m-l Dark mode, acheived by changing 4 values
+  .containrow.wrap
+    a.card.shadowout
+      img.cardimg(src='https://source.unsplash.com/collection/4794304/1000x1000')
+      h2 Welcome
+    .containcolumn
+      .card.shadowout
+        h2 This is a title
+        h5.c-gray This is a description
+        p Hi everyone my name is pipo, this is a card
+        .containrow
+          a.btn.ml-auto go!
+          a.btn.outline go!
+      .card.shadowout
+        h3 This is another card
+        h5.c-gray This time buttons on the left, how awesome!
+        a.btn go!
+        a.btn.outline go!
+      .card.shadowout
+        h4 Without buttons
+        p.c-gray Wow!
+  .containrow.wrap
+    .card.shadowout
+      h2 Forms
+      form
+        .containrow.wrap
+          .containcolumn.m-m
+            .group
+              input#email.shadowin(type='email' placeholder='Email')
+              label(for="email") Email
+            .group
+              input#pass.shadowin(type='password' placeholder='Password')
+              label(for="pass") Password
+            .group
+              input#field.shadowin(type='text' placeholder='Field')
+              label(for="field") Field
+            .group
+              input.shadowin(type='text' placeholder='Field' disabled='disabled')
+              label Field
+            .groupselect
+              select.shadowin
+                option 1
+                option 2
+                option 3
+                option 4
+                option 5
+            .groupselect
+              select.shadowin(disabled='disabled')
+                option 1
+                option 2
+                option 3
+                option 4
+                option 5
+          .containcolumn.m-m
+            .groupmultiselect
+              select.shadowin(multiple='multiple')
+                option 1
+                option 2
+                option 3
+                option 4
+                option 5
+            .groupmultiselect
+              select.shadowin(multiple='multiple' disabled='disabled')
+                option 1
+                option 2
+                option 3
+                option 4
+                option 6
+            .group
+              textarea.shadowin(rows='3' placeholder='Leave your comments')
+              label Leave your comments
+          .containcolumn.m-m
+            input#one(type='radio' name='radio')
+            label.shadowout(for='one') Label
+            input#two(type='radio' name='radio')
+            label.shadowout(for='two') Label
+            input#three(type='radio' name='radio')
+            label.shadowout(for='three') Label
+            input#four(type='radio' name='radio' disabled='disabled')
+            label.shadowout(for='four') Label
+            input#five(type='checkbox')
+            label.shadowout(for='five') Label
+            input#six(type='checkbox')
+            label.shadowout(for='six') Label
+            input#seven(type='checkbox' disabled='disabled')
+            label.shadowout(for='seven') Label
+            button.btn.shadowout Submit
+    .card.shadowout
+      h2 Useful Html classes
+      .containrow.wrap
+        .containcolumn
+          h4 Margin
+          p m-0, m-xs, m-s, m-m, m-l
+          p ml-auto, mx-auto, mr-auto
+          h4 Html classes for padding
+          p p-0, p-xs, p-s, p-m, p-l
+          br
+          h4 Flex container
+          p containrow containcolumn
+          br
+          h4 Shadows
+          p shadowout
+          .card.shadowout.p-m
+            p shadowin
+            .card.shadowin.p-m
+              p shadowboth
+              .card.shadowboth.p-m
+        .containcolumn
+          h4 Buttons
+          a.btn btn
+          p
+            button.btn.outline.shadowout btn outline
+          a.btn.danger.shadowout btn
+          a.btn.danger.outline btn
+          h4 Floating action button
+          p btn fab ( &#x1F4A9;)
+          h4 Badges
+          p
+            span.badge span badge
+            span.badge.danger badge danger
+          a.badge a badge
+          a.badge.danger a badge danger
+          h4 Tables
+          p striped (example below)
+          h4 Cards
+          p card (examples throughout page)
+          h4 Colors
+          p
+            span.c-accent c-accent 
+            span.c-gray c-gray 
+            span.b-accent b-accent
+            span.b-gray b-gray
+  .containrow
+    a.card.shadowout(href='tableexample.html')
+      h2 Tables
+      .containrow.wrap
+        table
+          tr
+            th Company
+            th Contact
+            th
+          tr
+            td Alfreds Futterkiste
+            td Maria Anderson
+            td
+              a.badge Details
+              a.badge.danger Delete
+          tr
+            td Centro comercial Moctezuma
+            td Francisco Chang
+            td
+              a.badge Details
+              a.badge.danger Delete
+          tr
+            td Ernst Handel
+            td Roland Mendel
+            td
+              a.badge Details
+              a.badge.danger Delete
+          tr
+            td Island Trading
+            td Helen Bennett
+            td
+              a.badge Details
+              a.badge.danger Delete
+          tr
+            td Laughing Bacchus Winecellars
+            td Yoshi Tannamuri
+            td
+              a.badge Details
+              a.badge.danger Delete
+          tr
+            td Magazzini Alimentari Riuniti
+            td Giovanni Rovelli
+            td
+              a.badge Details
+              a.badge.danger Delete
+        table.striped
+          tr
+            th Company
+            th Contact
+            th Country
+            th Corruption
+          tr
+            td Alfreds Futterkiste
+            td
+              | Maria 
+              br
+              span.c-gray Anders
+            td Germany
+            td
+              input(type='checkbox' disabled='disabled')
+              label
+          tr
+            td Centro comercial Moctezuma
+            td
+              | Francisco 
+              br
+              span.c-gray Chang
+            td Mexico
+            td
+              input(type='checkbox' disabled='disabled' checked='checked')
+              label
+          tr
+            td Ernst Handel
+            td
+              | Roland 
+              br
+              span.c-gray Mendel
+            td Austria
+            td
+              input(type='checkbox' disabled='disabled' checked='checked')
+              label
+          tr
+            td Island Trading
+            td
+              | Helen 
+              br
+              span.c-gray Bennett
+            td UK
+            td
+              input(type='checkbox' disabled='disabled')
+              label
+          tr
+            td Laughing Bacchus Winecellars
+            td
+              | Yoshi 
+              br
+              span.c-gray Tannamuri
+            td Canada
+            td
+              input(type='checkbox' disabled='disabled')
+              label
+          tr
+            td Magazzini Alimentari Riuniti
+            td
+              | Giovanni 
+              br
+              span.c-gray Rovelli
+            td Italy
+            td
+              input(type='checkbox' disabled='disabled' checked='checked')
+              label
+.notificationbar
+  .notification.shadowout.b-accent
+    h3.c-bg Notification title
+    p.c-bg Notification text
+    h6.c-bg click to dismiss
+  .notification.shadowout.b-bg
+    h3 Title
+    p Notification text is bigger than the other one pipo
+    h6 click to dismiss
+#modal.visible
+  .body.card
+    h3 Title
+    p Text
+script.
+  document.getElementById('modal').onclick = function(){this.classList.remove("visible")};
+  var divs = document.querySelectorAll('.notification');
+  [].forEach.call(divs, function(div) {
+  div.onclick = function(){this.classList.add("removed")};
+  });

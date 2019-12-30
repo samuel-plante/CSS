@@ -1,7 +1,7 @@
 //COLORS============================================
-$accent: #35A7FF
+$accent: #EDA531
 $gray: #999
-$danger: #FF213E
+$danger: #ff3c38
 //light theme
 $bg: #eee                  //background
 $t: #222                   //text
@@ -96,13 +96,14 @@ h1, h2, h3, h4, h5, h6, p, a
     border-radius: $b-radius
     margin: -$space-s
     margin-bottom: -$space-s - 3px
-    &:not(:last-child)
-      margin-bottom: 3px
     object-fit: cover
     height: $card-image-height
-    width: $card-image-height * $imageaspectratio
+    max-width: $card-image-height * $imageaspectratio
+    width: calc(100% + #{$space-m})
+    &:not(:last-child)
+      margin-bottom: 3px
 a, .btn, input, .badge
-  transition: all .2s ease-in-out
+  transition: color .2s ease-in-out, background-color .2s ease-in-out, box-shadow .2s ease-in-out
 label
   transition: all .1s ease-in-out
 .corners, .btn, .badge, form input, form select, form textarea, input[type=radio] + label, .card, .notification
@@ -143,10 +144,10 @@ label
   background-color: rgba($accent, .15)
   &.danger
     background-color: rgba($danger, .15)
-a.badge:hover, a:hover .badge
+a.badge:hover
   color: darken($accent, 15%)
   background-color: darken(rgba($accent, .15), 15%)
-a.badge.danger:hover, a:hover .badge.danger
+a.badge.danger:hover
   color: darken($danger, 15%)
   background-color: darken(rgba($danger, .15), 15%)
 input, select, textarea, .group, .groupselect, .groupmultiselect
@@ -157,14 +158,14 @@ input, select, textarea, .group, .groupselect, .groupmultiselect
     outline: none
 form
   input, select, textarea
-    &:focus
-      box-shadow: 0 0 0 3px rgba($accent, .25)
     box-sizing: border-box
     background-color: transparent
     padding: 13px $space-m $space-s $space-m
     display: block
     border: 1px solid $gray
+    margin: 0
     &:focus
+      box-shadow: 0 0 0 3px rgba($accent, .25)
       border: 1px solid $accent
     &:not([type=checkbox]):not([type=radio]) + label
       left: $space-m + 1px
@@ -240,7 +241,7 @@ input[type=radio] + label, input[type=checkbox] + label
       transition: 0.2s ease-in-out
       border-radius: 99999px
 *[disabled], *[disabled] + label
-  opacity: 50%
+  opacity: 0.5
 table
   border-spacing: 0
   margin: $space-s
@@ -285,7 +286,7 @@ table
     min-width: $card-min-width
 .notificationbar
   position: fixed
-  top: $space-m
+  top: 72px
   right: -$b-radius * 2
   align-items: flex-end
   .notification
@@ -293,3 +294,5 @@ table
     min-width: 0
     margin: $space-xs
     padding: $space-s $space-l $space-s $space-s
+.wrap
+  flex-wrap: wrap
