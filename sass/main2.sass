@@ -1,19 +1,19 @@
 //COLORS============================================
-$accent: #3a93bd
+$accent: #999
 $gray: #999
-$danger: #b13f3f
+$danger: #ff4a59
 //light theme
 $bg: #eee                  //background
 $t: #222                   //text
-$sl: rgba(255,255,255,0.9) //shadow light
-$sd: rgba(0,0,0,0.08)      //shadow dark
+$sl: rgba(255,255,255,0.0) //shadow light
+$sd: rgba(0,0,0,0.0)      //shadow dark
 //dark theme
-  $bg: #222
-  $t: #eee
-  $sl: rgba(255,255,255,0.07)
-  $sd: rgba(0,0,0,0.3)
+$bg: #222
+$t: #eee
+$sl: rgba(255,255,255,0.07)
+$sd: rgba(0,0,0,0.3)
 //SIZES==============================================
-$b-radius: 20px  //corner radius
+$b-radius: 20px 0px 20px 0px  //corner radius
 $space-xs: 5px
 $space-s: 10px
 $space-m: 20px
@@ -315,7 +315,7 @@ table
 .notificationbar
   position: fixed
   top: 72px
-  right: -$b-radius * 2
+  right: -$space-m
   align-items: flex-end
   .notification
     max-width: 250px

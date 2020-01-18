@@ -9,7 +9,7 @@ var pug = require('gulp-pug');
 
 
 gulp.task('pug', function() {
-  return gulp.src('**/*.pug')
+  return gulp.src('pug/**/*.pug')
       .pipe(pug())
       .pipe(gulp.dest(''));
 });
@@ -18,7 +18,7 @@ gulp.task('css', function(){
   var postcssopts = [
     autoprefixer( { overrideBrowserslist: ['last 2 versions', '>2%']} )
   ];
-  return gulp.src('sass/**/main.sass')
+  return gulp.src('sass/**/*.sass')
     .pipe(sourcemaps.init())
     .pipe(sass({
       outputStyle: 'expanded',
