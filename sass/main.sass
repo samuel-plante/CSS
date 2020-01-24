@@ -94,7 +94,7 @@ a.shadowout:hover, button.shadowout:hover
   box-shadow: $boxshadowouthover
 .flex, .containrow, .containcolumn, .navbar, #modal.visible, .notificationbar
   display: flex
-.notificationbar .notification.removed, input[type=radio], input[type=checkbox], #modal
+.notificationbar .notification.removed, input:not([type=range])[type=radio], input:not([type=range])[type=checkbox], #modal
   display: none
 .containrow, .containcolumn
   justify-content: space-evenly
@@ -173,7 +173,7 @@ input, select, textarea, .group, .groupselect, .groupmultiselect
     appearance: none
     outline: none
 form
-  input, select, textarea
+  input:not([type=range]), select, textarea
     box-sizing: border-box
     background-color: transparent
     padding: 13px $space-m $space-s $space-m
@@ -256,6 +256,32 @@ input[type=radio] + label, input[type=checkbox] + label
       position: absolute
       transition: 0.2s ease-in-out
       border-radius: 99999px
+input[type=range]
+  -webkit-appearance: none
+  background: transparent
+  &:focus
+    outline: none
+  &::-webkit-slider-thumb
+    z-index: 2
+    pointer-events: all
+    -webkit-appearance: none
+    height: 16px
+    width: 16px
+    border-radius: 10000px
+    background: $accent
+    cursor: pointer
+    margin-top: -7px
+  &::-webkit-slider-runnable-track
+    height: 2px
+    cursor: pointer
+    background-color: $gray
+    border-radius: 10000px
+    appearance: none
+.doublerange input[type=range]:last-child::-webkit-slider-runnable-track
+  height: 0
+  margin-bottom: 20px
+.doublerange input[type=range]:last-child
+  margin-top: -4px
 *[disabled], *[disabled] + label
   opacity: 0.5
 table
