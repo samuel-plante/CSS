@@ -83,6 +83,10 @@ a.btn.fab.shadowout &#x1F4A9;
             .group
               textarea.shadowin(rows='3' placeholder='Leave your comments')
               label Leave your comments
+            .doublerange
+              input(type="range" class="custom-range" min="0" max="5" step=.001 value=1 id="customRange2")
+              input(type="range" class="custom-range" min="0" max="5" step=.001 value=2 id="customRange2")
+            input.mt-m(type="range" class="custom-range" min="0" max="5" step=.001 value=1 id="customRange2")
           .containcolumn.m-m
             input#one(type='radio' name='radio')
             label.shadowout(for='one') Label
